@@ -1,0 +1,104 @@
+--------------------Configuration: Spot - Win32 Debug--------------------
+Begining build with project "D:\Spot\Spot.dsp", at root.
+Active configuration is Win32 (x86) Application (based on Win32 (x86) Application)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /MDd /W3 /Gm /GX /Zi /Od /I "C:\MIL\INCLUDE" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "MORE_MODEL" /Fp".\Debug/Spot.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c "
+			"OLE Type Library Maker" with flags "/nologo /D "_DEBUG" /mktyplib203 /win32 "
+			"Win32 Resource Compiler" with flags "/l 0x412 /fo".\Debug/Spot.res" /d "_DEBUG" /d "_AFXDLL" "
+			"Browser Database Maker" with flags "/nologo /o".\Debug/Spot.bsc" "
+			"COFF Linker for 80x86" with flags "milhost.lib milvga.lib mil.lib milmet.lib miltiff.lib /nologo /subsystem:windows /incremental:yes /pdb:".\Debug/Spot.pdb" /debug /machine:I386 /out:".\Debug/Spot.exe" /libpath:"C:\mil\library\winnt\msc\dll" "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating command line "rc.exe /l 0x412 /fo".\Debug/Spot.res" /d "_DEBUG" /d "_AFXDLL" "D:\Spot\Spot.rc"" 
+Creating temp file "C:\WIN95\TEMP\RSP8001.TMP" with contents </nologo /MDd /W3 /Gm /GX /Zi /Od /I "C:\MIL\INCLUDE" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "MORE_MODEL" /Fp".\Debug/Spot.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"D:\Spot\Cdhmm.cpp"
+"D:\Spot\CFlist.cpp"
+"D:\Spot\Cfvec.cpp"
+"D:\Spot\ChildFrm.cpp"
+"D:\Spot\Cmatrix.cpp"
+"D:\Spot\Cmgvq.cpp"
+"D:\Spot\CMyMIL.cpp"
+"D:\Spot\Cstroke.cpp"
+"D:\Spot\Cvq.cpp"
+"D:\Spot\CVScore.cpp"
+"D:\Spot\DocMisc.cpp"
+"D:\Spot\DoHmm.cpp"
+"D:\Spot\GestureDoc.cpp"
+"D:\Spot\GestureView.cpp"
+"D:\Spot\MainFrm.cpp"
+"D:\Spot\Makemeta.cpp"
+"D:\Spot\MyHand.cpp"
+"D:\Spot\PrefixDlg.cpp"
+"D:\Spot\Spot.cpp"
+"D:\Spot\SpotDoc.cpp"
+"D:\Spot\SpotUtil.cpp"
+"D:\Spot\SpotView.cpp"
+"D:\Spot\utils.cpp"
+>
+Creating command line "cl.exe @C:\WIN95\TEMP\RSP8001.TMP" 
+Creating temp file "C:\WIN95\TEMP\RSP8002.TMP" with contents </nologo /MDd /W3 /Gm /GX /Zi /Od /I "C:\MIL\INCLUDE" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "MORE_MODEL" /Fp".\Debug/Spot.pch" /Yc"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"D:\Spot\StdAfx.cpp"
+>
+Creating command line "cl.exe @C:\WIN95\TEMP\RSP8002.TMP" 
+Creating temp file "C:\WIN95\TEMP\RSP8003.TMP" with contents <milhost.lib milvga.lib mil.lib milmet.lib miltiff.lib /nologo /subsystem:windows /incremental:yes /pdb:".\Debug/Spot.pdb" /debug /machine:I386 /out:".\Debug/Spot.exe" /libpath:"C:\mil\library\winnt\msc\dll" 
+.\Debug\Cdhmm.obj
+.\Debug\CFlist.obj
+.\Debug\Cfvec.obj
+.\Debug\ChildFrm.obj
+.\Debug\Cmatrix.obj
+.\Debug\Cmgvq.obj
+.\Debug\CMyMIL.obj
+.\Debug\Cstroke.obj
+.\Debug\Cvq.obj
+.\Debug\CVScore.obj
+.\Debug\DocMisc.obj
+.\Debug\DoHmm.obj
+.\Debug\GestureDoc.obj
+.\Debug\GestureView.obj
+.\Debug\MainFrm.obj
+.\Debug\Makemeta.obj
+.\Debug\MyHand.obj
+.\Debug\PrefixDlg.obj
+.\Debug\Spot.obj
+.\Debug\SpotDoc.obj
+.\Debug\SpotUtil.obj
+.\Debug\SpotView.obj
+.\Debug\StdAfx.obj
+.\Debug\utils.obj
+.\Debug\Spot.res>
+Creating command line "link.exe @C:\WIN95\TEMP\RSP8003.TMP" 
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Cdhmm.cpp
+CFlist.cpp
+Cfvec.cpp
+ChildFrm.cpp
+Cmatrix.cpp
+Cmgvq.cpp
+CMyMIL.cpp
+Cstroke.cpp
+Cvq.cpp
+CVScore.cpp
+DocMisc.cpp
+DoHmm.cpp
+GestureDoc.cpp
+GestureView.cpp
+MainFrm.cpp
+Makemeta.cpp
+MyHand.cpp
+PrefixDlg.cpp
+Spot.cpp
+SpotDoc.cpp
+SpotUtil.cpp
+SpotView.cpp
+utils.cpp
+Generating Code...
+Linking...
+
+
+
+Spot.exe - 0 error(s), 0 warning(s)
