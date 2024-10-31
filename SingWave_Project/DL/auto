@@ -1,0 +1,38 @@
+import numpy as np
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+
+# 데이터 샘플 예시 (임의의 Senseglove 데이터)
+# 각 row는 하나의 시간 단계에서의 센서 데이터라고 가정
+input_dim = 20  # 예: 각 손가락 위치나 각도 등 20개 특성
+data = np.random.rand(1000, input_dim)  # 1000개의 샘플
+
+# 오토인코더 모델 구성
+encoding_dim = 8  # 차원 축소를 위해 설정할 저차원 공간의 크기
+
+# 인코더 부분
+input_data = Input(shape=(input_dim,))
+encoded = Dense(16, activation='relu')(input_data)
+encoded = Dense(encoding_dim, activation='relu')(encoded)
+
+# 디코더 부분
+decoded = Dense(16, activation='relu')(encoded)
+decoded = Dense(input_dim, activation='sigmoid')(decoded)
+
+# 오토인코더 모델 정의
+autoencoder = Model(input_data, decoded)
+
+# 인코더 모델만 따로 정의 (HMM용 입력 생성에 필요)
+encoder = Model(input_data, encoded)
+
+# 모델 컴파일
+autoencoder.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
+
+# 모델 훈련
+autoencoder.fit(data, data, epochs=50, batch_size=32, shuffle=True, validation_split=0.2)
+
+# 예측을 통해 저차원 벡터 추출
+encoded_data = encoder.predict(data)
+
+print("Encoded data for HMM input:", encoded_data)
