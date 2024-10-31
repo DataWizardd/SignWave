@@ -1,0 +1,45 @@
+import tensorflow as tf
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
+import numpy as np
+import pandas as pd
+
+# 입력 데이터의 크기 (손가락 관절 데이터, 위치, 속성 등을 반영한 차원 수)
+input_dim = 50  # 데이터 크기에 맞게 조정
+
+# 인코더 정의
+input_layer = Input(shape=(input_dim,))
+encoded = Dense(32, activation='relu')(input_layer)  # 숨겨진 레이어, 필요한 경우 추가
+encoded = Dense(16, activation='relu')(encoded)  # 저차원 공간으로 인코딩
+
+# 디코더 정의
+decoded = Dense(32, activation='relu')(encoded)
+decoded = Dense(input_dim, activation='sigmoid')(decoded)  # 원래 차원으로 복원
+
+# 오토인코더 모델
+autoencoder = Model(input_layer, decoded)
+
+# 인코더 모델 (특징 추출 용도)
+encoder = Model(input_layer, encoded)
+
+# 오토인코더 모델 컴파일
+autoencoder.compile(optimizer='adam', loss='mse')
+
+# 데이터 준비 
+data = np.random.rand(1000, input_dim)  # 실제 데이터로 대체 필요
+train_data, test_data = data[:800], data[800:]
+
+# 모델 학습
+autoencoder.fit(train_data, train_data,
+                epochs=50,
+                batch_size=32,
+                shuffle=True,
+                validation_data=(test_data, test_data))
+
+# 학습 완료 후 인코더를 사용해 저차원 특징 벡터 추출
+encoded_data = encoder.predict(test_data)
+
+# 추출된 특징 벡터를 CSV 파일로 저장
+encoded_df = pd.DataFrame(encoded_data)
+encoded_df.to_csv('encoded_features.csv', index=False)
+print("Encoded features saved to 'encoded_features.csv'")
