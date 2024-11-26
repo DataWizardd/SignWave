@@ -6,3 +6,5 @@
 * 활용 알고리즘 : HMM, Gesture Spotting, Threshold Modle
 ---
 * 개발 일정 : '24.11.30까지 알고리즘 개발 마무리
+---
+* hand_tracking, autoencoder 개발 완료.
